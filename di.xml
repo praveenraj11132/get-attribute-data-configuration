@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Wheelpros\CatalogExtended\Api\Data\ProductImageInterface"
+                type="Wheelpros\CatalogExtended\Model\Data\ProductImage" />
+    <preference for="Wheelpros\CatalogExtended\Api\Data\StatusInterface"
+                type="Wheelpros\CatalogExtended\Model\Data\Status" />
+    <preference for="Wheelpros\CatalogExtended\Api\ProductImageManagementInterface"
+                type="Wheelpros\CatalogExtended\Model\ProductImageManagement" />
+    <preference for="Magento\Elasticsearch\Model\ResourceModel\Fulltext\Collection\SearchResultApplier"
+                type="Wheelpros\CatalogExtended\Model\ResourceModel\Fulltext\Collection\SearchResultApplier"/>
+    <type name="Magento\Catalog\Ui\DataProvider\Product\ProductRenderCollectorComposite">
+        <arguments>
+            <argument name="productProviders" xsi:type="array">
+                <item name="sku" xsi:type="object">\Wheelpros\CatalogExtended\Ui\DataProvider\Product\Listing\Collector\Sku</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator">
+        <arguments>
+            <argument name="batchRowsCount" xsi:type="array">
+                <item name="default" xsi:type="number">1000</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit\Tab\Front">
+        <plugin name="wheelpros_catalogextended_front_tab_plugin" type="Wheelpros\CatalogExtended\Plugin\Block\Adminhtml\Product\Attribute\Edit\Tab\Front" />
+    </type>
+</config>
