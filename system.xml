@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="brands" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>All Brands Category</label>
+            <tab>wheelpros</tab>
+            <resource>Wheelpros_CatalogExtended::config</resource>
+            <group id="allbrands" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Categories</label>
+               <field id="category_multiselect" translate="label" type="multiselect" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Category Multi Select Dropdown</label>
+                    <source_model>Wheelpros\CatalogExtended\Model\Config\Source\CategoryList</source_model>
+                </field>
+            </group>
+        </section>
+        <section id="catalog" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>catalog</tab>
+            <resource>Wheelpros_CatalogExtended::config</resource>
+            <group id="frontend" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="enable_new_tab" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="350" canRestore="1">
+                    <label>Open Product in New Page</label>
+                    <comment>By Selecting 'Yes' product will be opened in new tab in all listing pages</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+        <section id="wheelpros_catalog" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Catalog</label>
+            <tab>wheelpros</tab>
+            <resource>Wheelpros_CatalogExtended::wheelpros_catalog</resource>
+            <group id="quantity_ranges" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quantity</label>
+                <field id="default_quantity" translate="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Set Default Quantity</label>
+                    <frontend_model>Wheelpros\CatalogExtended\Block\Adminhtml\Form\Field\Category</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>Set the default quantity for a category. If child categories doesn't have default quantity set, then parent category's configuration will apply to its children as well</comment>
+                </field>
+            </group>
+            <group id="attribute_select" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Brand Attribute Configuration</label>
+                <field id="set_attribute" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Brand Attribute</label>
+                    <source_model>Wheelpros\CatalogExtended\Model\Config\Source\AttributeList</source_model>
+                </field>
+            </group>
+        </section>
+        <section id="wheelpros_cron" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Techfeed</label>
+            <tab>wheelpros</tab>
+            <resource>Wheelpros_CatalogExtended::wheelpros_cron</resource>
+            <group id="sftp" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>SFTP Infomraiton</label>
+                <field id="hostname" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hostname</label>
+                    <comment>Hostname</comment>
+                </field>
+                <field id="username" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Username</label>
+                    <comment>username</comment>
+                </field>
+                <field id="password" translate="label" type="password" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <comment>password</comment>
+                </field>
+            </group>
+            <group id="imageapi" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Image Api Connection</label>
+                <field id="imgemail" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wheelpros Email</label>
+                    <comment>wheelpros email</comment>
+                </field>
+                <field id="imgpassword" translate="label" type="password" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wheelpros Password</label>
+                    <comment>wheelpros password</comment>
+                </field>
+                <field id="authapi" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auth API</label>
+                    <comment>auth api</comment>
+                </field>
+                <field id="imgapi" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wheel Image API</label>
+                    <comment>wheel image api</comment>
+                </field>
+                <field id="tireapi" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tire Image API</label>
+                    <comment>tire image api</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
